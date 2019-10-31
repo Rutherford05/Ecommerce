@@ -42,13 +42,13 @@ class ProduitController extends Controller
             'image_prod'            =>   $new_name
         );
         Myprod::create($input_data);
-        return redirect('mes_articles')->with('Success', 'La catégorie a été ajoutée avec succès');
+        return redirect('mes_articles')->with('Success', 'Le produit a été ajoutée avec succès');
     }
     
     public function edit($id)
     {
         $data = Myprod::findOrFail($id);
-        return view('edit', compact('data'));
+        return view('produits.edit', compact('data'));
     }
  
     public function update(Request $request, $id)
