@@ -23,7 +23,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
 
-<form method="post" action="{{ route('mes_articles.store') }}" enctype="multipart/form-data">
+<form method="post" action="{{ route('prod.store') }}" enctype="multipart/form-data">
 
 {{csrf_field()}}
 <form>
@@ -49,7 +49,7 @@
         <input type="file" name="image_prod" id="image" class="form-control">
     </div>
   </div>
-  <a href="{{ route('mes_articles.index') }}" class="btn btn-warning">Annuler</a>
+  <a href="{{ route('prod.index') }}" class="btn btn-warning">Annuler</a>
  <button type="submit"  name="add" class="btn btn-info input-lg">Ajouter</button>
 </form>
 </div>

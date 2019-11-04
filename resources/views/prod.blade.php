@@ -25,7 +25,7 @@
       <i class="fas fa-search" aria-hidden="true"></i>
     </form>
 <div align="right">
- <a href="{{ route('mes_articles.create') }}" class="btn btn-success">
+ <a href="{{ route('prod.create') }}" class="btn btn-success">
  <span class="fa fa-plus-circle">AJOUTER UN PRODUIT</span></a>
 </div>
 <table class="table table-bordered table-striped bg-dark" style="color:white; border:none">
@@ -37,17 +37,17 @@
   <th >Categorie</th>
   <th >Action</th>
  </tr>
- @foreach($data as $mes_articles)
+ @foreach($data as $prod)
  <tbody style="color:black; font:blod; background:#ffff">
   <tr class="text-center">
-   <td><img src="{{ URL::to('/') }}/images/{{ $mes_articles->image_prod }}"  width="90" height="90" /></td>
-   <td>{{ $mes_articles->designation_prod }}</td>
-   <td>{{ $mes_articles->prix }}</td>
-   <td>{{ $mes_articles->quantite }}</td>
-   <td>{{ $mes_articles->cat_id }}</td>
+   <td><img src="{{ URL::to('/') }}/images/{{ $prod->image_prod }}"  width="90" height="90" /></td>
+   <td>{{ $prod->designation_prod }}</td>
+   <td>{{ $prod->prix }}</td>
+   <td>{{ $prod->quantite }}</td>
+   <td>{{ $prod->cat_id }}</td>
    <td width="25%">
-   <form action="{{ route('mes_articles.destroy', $mes_articles->id) }}" method="post">
-	<a href="{{ route('mes_articles.edit', $mes_articles->id) }}" class="btn btn-primary"><span class="fa fa-edit"></span></a>
+   <form action="{{ route('prod.destroy', $prod->id) }}" method="post">
+	<a href="{{ route('prod.edit', $prod->id) }}" class="btn btn-primary"><span class="fa fa-edit"></span></a>
 	{{csrf_field()}}
     {{method_field('DELETE')}}
 	<button type="submit" class="btn btn-danger"><span class="fa fa-trash"></span></button>

@@ -22,20 +22,3 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
-$factory->define(App\Mycat::class, function (Faker\Generator $faker) {
-
-    return [
-        'designation_cat' => $faker->designation_cat,
-        'image_cat' => $faker->image_cat,
-    ];
-});
-$factory->define(App\Myprod::class, function (Faker\Generator $faker) {
-
-    return [
-        'designation_cat' => $faker->designation_cat,
-        'image_cat' => $faker->image_cat,
-        'prix' => $faker->prix,
-        'quantite' => $faker->quantite,
-        'cat_id' => $faker->numberBetween($min=1, $max=50)
-    ];
-});

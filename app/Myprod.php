@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Myprod extends Model
 {
         public function Mycat(){
-        return $this->belongsTo(Mycat::class);
+        return $this->hasMany('App\Mycat');
     }
     protected $fillable = [
         'designation_prod', 'image_prod','prix','quantite'

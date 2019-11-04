@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Myprod;
+use App\Mycat;
 use Redirect;
 use DB;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -10,18 +11,19 @@ class ProduitController extends Controller
     public function index()
     {
         $data = Myprod::latest()->paginate(5);
-        return view('produits.prod', compact('data'))
+        return view('prod', compact('data'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     
     public function create()
     {
-        return view('produits.create');
+        $categories = Mycat::all();
+        return view('create')->with('categories', $categories);
     }
     public function search(Request $request){
         $search=$request->get('search');
         $data=DB::table('myprods')->where('designation_prod','like','%'.$search.'%')->paginate(3);
-        return view('produits.prod',['data'=>$data]);
+        return view('prod',['data'=>$data]);
              
     }
     public function store(Request $request)
@@ -42,13 +44,13 @@ class ProduitController extends Controller
             'image_prod'            =>   $new_name
         );
         Myprod::create($input_data);
-        return redirect('mes_articles')->with('Success', 'Le produit a été ajoutée avec succès');
+        return redirect('prod')->with('Success', 'Le produit a été ajoutée avec succès');
     }
     
     public function edit($id)
     {
         $data = Myprod::findOrFail($id);
-        return view('produits.edit', compact('data'));
+        return view('edit', compact('data'));
     }
  
     public function update(Request $request, $id)
@@ -85,13 +87,13 @@ class ProduitController extends Controller
              $data->prix = $request['prix'];
              $data->quantite= $request['quantite'];
              $data->save();
-        return redirect('mes_articles')->with('Success', 'Le produit a été modifié avec succes');
+        return redirect('prod')->with('Success', 'Le produit a été modifié avec succes');
     }
     
     public function destroy($id) 
     {
         $data = Myprod::findOrFail($id);
         $data->delete();
-        return redirect('mes_articles')->with('error', 'Le produit a été supprimé avec success');
+        return redirect('prod')->with('error', 'Le produit a été supprimé avec success');
     }
 }

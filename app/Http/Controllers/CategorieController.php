@@ -16,7 +16,7 @@ class CategorieController extends Controller
     
     public function create()
     {
-        return view('create');
+        return view('categories.create');
     }
     public function search(Request $request){
         $search=$request->get('search');
@@ -38,7 +38,7 @@ class CategorieController extends Controller
             'image'            =>   $new_name
         );
         Mycat::create($input_data);
-        return redirect('mes_articles')->with('Success', 'La catégorie a été ajoutée avec succès');
+        return redirect('crud')->with('Success', 'La catégorie a été ajoutée avec succès');
     }
     
     public function edit($id)
@@ -75,13 +75,13 @@ class CategorieController extends Controller
         }
              $data->designation_cat= $request['designation_cat'];
              $data->save();
-        return redirect('mes_articles')->with('Success', 'Modification réussie');
+        return redirect('crud')->with('Success', 'Modification réussie');
     }
     
     public function destroy($id) 
     {
         $data = Mycat::findOrFail($id);
         $data->delete();
-        return redirect('mes_articles')->with('error', 'Suppression de categorie réussie');
+        return redirect('crud')->with('error', 'Suppression de categorie réussie');
     }
 }
