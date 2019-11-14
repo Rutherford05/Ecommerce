@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mycat extends Model
 {
-       public function Myprod(){
-        return $this->HasMany(Myprod::class);
+    protected $primaryKey = 'id';
+       public function myprods(){
+        return $this->hasMany(Myprod::class,'id');
     }
     protected $fillable = [
         'designation_cat', 'image'

@@ -126,7 +126,7 @@
             <div class="col-md bb">
             <div class="wprock-img-zoom-hover">
               <div class="wprock-img-zoom">
-                <a href="/mauris"><img src="{{URL::asset('images/'. $post->image_prod)}}" alt="" class="img-fluid rd"></a>
+                <a href="#"><img src="{{URL::asset('images/'. $post->image_prod)}}" alt="" class="img-fluid rd"></a>
                 <div class="ppp">
                 <h2>{{$post->designation_prod}}</h2>
                 </div>
@@ -134,9 +134,4 @@
             </div>
             </div>
             @endforeach
-                             <section class="container-fluid text-center py-4 mt-4" id="contact">
-   <h2 class="display-4 pb-4 my-4">Get in touch with us today!</h2>
-   <p class="lead pb-3">Send us a message and we will get back to 
-   you as soon as possible.</p>
-</section>
 @endsection

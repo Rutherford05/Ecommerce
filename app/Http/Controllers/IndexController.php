@@ -11,9 +11,4 @@ class IndexController extends Controller
         $pages = Mycat::all();
         return view('index')->with('pages',$pages);
            }
-   public function filter($id)
-   {
-    $pages=Mycat::find($id)->myprods;
-    return view('living')->with('pages',$pages);
-   }
 }

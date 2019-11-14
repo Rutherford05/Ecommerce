@@ -8,11 +8,11 @@ use App\Mycat;
 
 class LivingController extends Controller
 {
-    public function cool($id){
+    /*public function cool($id){
         //$categories=Mycat::find($id)->myprods;
         $products = Myprod::all();
         return view('living',compact('products'));
-    }
+    }*/
     public function drd(){
         return view('accessoires');
     }

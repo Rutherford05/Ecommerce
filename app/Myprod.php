@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Myprod extends Model
 {
-        public function Mycat(){
+    protected $table ='myprods';
+    protected $primaryKey = 'id';
+        public function mycats(){
         return $this->belongsTo(Mycat::class,'cat_id');
     }
     protected $fillable = [

@@ -23,9 +23,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/index','IndexController@show');
-//Route::get('/living/{id}','IndexController@filter');
+Route::get('/detailsProduits/{id}','DetailsProduitsController@filter');
 Route::get('/living','LivingController@show');
-Route::get('/living/{id}','LivingController@cool');
+Route::get('/detailsProduits/{id}','DetailsproduitsController@cool');
 Route::get('/accessoires','LivingController@drd');
 Route::get('/decorative','LivingController@deco');
 Route::get('/mauris','LivingController@mau');
