@@ -14,7 +14,6 @@
 <p align="center">{{$message}}</p>
 </div>
 @endif
-
 </div>
 <div class="input-group">
 <form class="form-inline ml-auto" action="/search">
@@ -44,16 +43,14 @@
    <td>{{ $prod->designation_prod }}</td>
    <td>{{ $prod->prix }}</td>
    <td>{{ $prod->quantite }}</td>
-   <td>{{ $prod->cat_id }}</td>
+   <td>{{$prod->cat_id }}</td>
    <td width="25%">
    <form action="{{ route('prod.destroy', $prod->id) }}" method="post">
 	<a href="{{ route('prod.edit', $prod->id) }}" class="btn btn-primary"><span class="fa fa-edit"></span></a>
 	{{csrf_field()}}
     {{method_field('DELETE')}}
 	<button type="submit" class="btn btn-danger"><span class="fa fa-trash"></span></button>
-	</form>
-    
-            
+	</form>        
    </td>
   </tr>
   </tbody>

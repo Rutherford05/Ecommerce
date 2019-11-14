@@ -117,22 +117,9 @@
             </div>
             </div>
             </div>
-            <div class="col-md bb">
-            <div class="wprock-img-zoom-hover">
-            <div class="wprock-img-zoom">
-                <a href="#"><img src="img/1.jpg" alt="" class="img-fluid rd"></a>
-                <div class="ppp">
-                <h2>Libero Headphones</h2>
-                </div>
             </div>
             </div>
             </div>
-            <div class="col-md bb ">
-            <div class="wprock-img-zoom-hover">
-               <div class="wprock-img-zoom">
-                <a href=""><img src="img/10.jpg" alt="" class="img-fluid rd"></a>
-                <div class="ppp">
-                <h2>Portable Bluetooth Speaker</h2>
                 </div>
             </div>
             </div>
@@ -148,13 +135,6 @@
         </aside>
 
          </div>
-            <div class="col-md-3 bb">
-            <div class="wprock-img-zoom-hover">
-              <div class="wprock-img-zoom">
-                <a href=""><img src="img/elephant.jpg" alt="" class="img-fluid rd"></a>
-                <div class="ppp">
-                <h2>Elephant Chair</h2>
-                </div>
             </div>
             </div>
             </div>

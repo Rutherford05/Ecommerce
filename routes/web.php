@@ -12,14 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
+});
+Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/index','IndexController@show');
-Route::get('/living','LivingController@cool');
+//Route::get('/living/{id}','IndexController@filter');
+Route::get('/living','LivingController@show');
+Route::get('/living/{id}','LivingController@cool');
 Route::get('/accessoires','LivingController@drd');
 Route::get('/decorative','LivingController@deco');
 Route::get('/mauris','LivingController@mau');
@@ -38,4 +44,19 @@ Route::resource('prod', 'ProduitController');
 Route::delete('/prod/{id}/delete','ProduitController@destroy');
 Route::put('/prod/{id}/update','ProduitController@update');
 Route::get('/search','ProduitController@search');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', 'Admin\DashboardController@index')->name('dashboard');
+});
+Route::get('user', array('as' => 'user.index', 'uses' => 'UserController@index'));
+Route::get('user/register', array('as' => 'user.register', 'uses' => 'UserController@register'));
+Route::post('user/store', array('as' => 'user.store', 'uses' => 'UserController@store'));
+Route::get('user/login', array('as' => 'user.login', 'uses' => 'UserController@login'));
+Route::post('user/authenticate', array('as' => 'user.authenticate', 'uses' => 'UserController@authenticate'));
+Route::get('user/logout', array('as' => 'user.logout', 'uses' => 'UserController@logout'));
+Route::get('user/account', array('as' => 'user.account', 'uses' => 'UserController@account'))->middleware('auth');
 

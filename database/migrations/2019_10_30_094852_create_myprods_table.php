@@ -16,13 +16,13 @@ class CreateMyprodsTable extends Migration
         Schema::create('myprods', function (Blueprint $table) {
             $table->increments('id');
             $table->string('designation_prod');
-            $table->string('image_prod',100);
+            $table->string('image_prod');
             $table->integer('prix');
             $table->integer('quantite');
             $table->integer('cat_id')->unsigned()->index();
             $table->timestamps();
             $table->foreign('cat_id')->references('id')->on('mycats')
-            ->onDelete('restrict')
+            ->onDelete('cascade')
             ->onUpdate('restrict');
 
         });

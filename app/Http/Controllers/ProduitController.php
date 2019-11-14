@@ -41,7 +41,8 @@ class ProduitController extends Controller
             'designation_prod'       =>   $request->designation_prod,
             'prix'       =>   $request->prix,
             'quantite'       =>   $request->quantite,
-            'image_prod'            =>   $new_name
+            'cat_id'       =>   $request->cat_id,
+           'image_prod'            =>   $new_name
         );
         Myprod::create($input_data);
         return redirect('prod')->with('Success', 'Le produit a été ajoutée avec succès');
@@ -87,13 +88,14 @@ class ProduitController extends Controller
              $data->prix = $request['prix'];
              $data->quantite= $request['quantite'];
              $data->save();
-        return redirect('prod')->with('Success', 'Le produit a été modifié avec succes');
+        return redirect('prod')->with('Success', 'Le produit a bien été modifié');
     }
     
     public function destroy($id) 
     {
         $data = Myprod::findOrFail($id);
         $data->delete();
-        return redirect('prod')->with('error', 'Le produit a été supprimé avec success');
+        return redirect('prod')->with('error', 'Le produit a bien été supprimé');
     }
+   
 }

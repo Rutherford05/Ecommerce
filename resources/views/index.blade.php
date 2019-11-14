@@ -172,54 +172,24 @@
 </div>
 <div class="container">
 	<div class="row">
+  @foreach ($pages as $page)
             <div class="col-md-3 bb">
               <div class="wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
-                <a href="/living"><img src="img/6.jpg" alt="" class="img-fluid rd"></a>
+                <a href="{{ URL('/detailsProduits', $page->id) }}"><img src="{{ URL::asset('images/' . $page->image ) }}" alt="" class="img-fluid rd"></a>
                 <div class="ppp">
-                <h2>Living Room</h2>
+                <h2>{{$page->designation_cat}}</h2>
                 </div>
             </div>
             </div>
             </div>
-            <div class="col-md-3 bb">
-            <div class="wprock-img-zoom-hover">
-              <div class="wprock-img-zoom">
-                <a href="/accessoires"><img src="img/1.jpg" alt="" class="img-fluid rd"></a>
-                <div class="ppp">
-                <h2>Accessories</h2>
-                </div>
-            </div>
-            </div>
-            </div>
-            <div class="col-md-3 bb">
-            <div class="wprock-img-zoom-hover">
-            <div class="wprock-img-zoom">
-                <a href="/bathroom"><img src="img/2.jpg" alt="" class="img-fluid rd"></a>
-                <div class="ppp">
-                <h2>Bathroom</h2>
-                </div>
-            </div>
-            </div>
-            </div>
-            <div class="col-md-3 bb ">
-            <div class="wprock-img-zoom-hover">
-               <div class="wprock-img-zoom">
-                <a href=""><img src="img/4.jpg" alt="" class="img-fluid rd"></a>
-                <div class="ppp">
-                <h2>Kitchen</h2>
-                </div>
-            </div>
-            </div>
-            </div>
-                </div>
-            </div>
-            <div class="ruther">
+   @endforeach
+            <div class="ruther text-align=center">
             <h2> Recent Products</h2>
             <p>Recent posuere neque eu lectus ultricies</p>
             </div>
             <div class="container">
-	<div class="row">
+          	<div class="row">
             <div class="col-md-3 gg">
               <div class="wprock-img-zoom-hover">
                 <div class="wprock-img-zoom">
